@@ -20,7 +20,7 @@
       display: flex;
       justify-content: center;
       align-items: start;
-      padding: 30px 20px 90px; /* नीचे दीये के लिए अच्छी जगह */
+      padding: 30px 20px 100px; /* नीचे दीयों के लिए जगह */
     }
     .container {
       background-color: rgba(43,10,5,0.85);
@@ -28,7 +28,7 @@
       border-radius: 16px;
       padding: 25px 18px;
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       text-align: center;
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
     }
@@ -40,10 +40,10 @@
     }
     #selectedImage {
       width: 100%;
-      max-height: 240px;
-      border-radius: 10px;
-      border: 2px solid #FFD700;
-      margin-bottom: 16px;
+      max-height: 350px; /* बड़ा किया गया */
+      border-radius: 12px;
+      border: 3px solid #FFD700;
+      margin-bottom: 18px;
       object-fit: cover;
       object-position: center top;
     }
@@ -55,10 +55,10 @@
       width: 100%;
       padding: 10px;
       border-radius: 8px;
-      border: 2px solid #FFD700;
+      border: 3px solid #FFD700;
       font-size: 1rem;
       margin-bottom: 10px;
-      background-color: #FDF1C7;
+      background-color: #FDF1c7;
       color: #000;
     }
     #previewBlock {
@@ -122,7 +122,7 @@
     /* Diya GIF Styles */
     .diya-gif {
       position: fixed;
-      width: 80px;
+      width: 90px; /* बड़ा किया गया */
       height: auto;
       z-index: 1000;
       pointer-events: none;
@@ -140,7 +140,7 @@
 <body>
   <div class="container">
     <h1>शुभ दीपावली</h1>
-    <img id="selectedImage" src="https://github.com/saurani/Diwali-wishes-3/raw/main/Laxmimata.png" alt="दीपावली इमेज" />
+    <img id="selectedImage" src="https://github.com/saurani/Diwali-wishes-3/raw/main/Laxmimata.png" alt="लक्ष्मी माता" />
     
     <h2>दीवाली की हार्दिक शुभकामनाएं</h2>
     
@@ -165,8 +165,8 @@
   </div>
 
   <!-- Decorative Diya GIFs in both bottom corners -->
-  <img src="https://github.com/saurani/Diwali-wishes-3/raw/main/Diya1.png" class="diya-gif bottom-left" alt="दीया" />
-  <img src="https://github.com/saurani/Diwali-wishes-3/raw/main/Diya2.png" class="diya-gif bottom-right" alt="दीया" />
+  <img src="https://github.com/saurani/Diwali-wishes-3/raw/main/Diya%20.png" class="diya-gif bottom-left" alt="दीया" />
+  <img src="https://github.com/saurani/Diwali-wishes-3/raw/main/Diya%20.png" class="diya-gif bottom-right" alt="दीया" />
 
   <script>
     function generateLink() {
