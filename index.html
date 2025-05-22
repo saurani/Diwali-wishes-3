@@ -20,59 +20,73 @@
       display: flex;
       justify-content: center;
       align-items: start;
-      padding: 30px 20px 100px; /* नीचे दीयों के लिए जगह */
+      padding: 30px 20px 160px;
     }
     .container {
       background-color: rgba(43,10,5,0.85);
       border: 2px solid #FFD700;
       border-radius: 16px;
-      padding: 25px 18px;
+      padding: 20px 18px;
       width: 100%;
-      max-width: 440px;
+      max-width: 4490px;
       text-align: center;
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      animation: fadeInUp 1s ease;
     }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      animation: fadeInDown 1s ease;
+    }
+
+    #selectedImage {
+      width: 100%;
+      max-height: 320px;
+      border-radius: 12px;
+      border: 3px solid #FFD700;
+      margin-bottom: 16px;
+      object-fit: cover;
+      object-position: center top;
+      animation: fadeIn 1.5s ease;
+    }
+
     h1 {
       font-family: 'Yatra One', cursive;
       font-size: 1.8rem;
       color: #FFD700;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      animation: fadeIn 2s ease;
     }
-    #selectedImage {
-      width: 100%;
-      max-height: 350px; /* बड़ा किया गया */
-      border-radius: 12px;
-      border: 3px solid #FFD700;
-      margin-bottom: 18px;
-      object-fit: cover;
-      object-position: center top;
-    }
-    h2 {
-      font-size: 1.1rem;
-      margin-bottom: 14px;
-    }
+
     input[type="text"] {
       width: 100%;
       padding: 10px;
       border-radius: 8px;
-      border: 3px solid #FFD700;
+      border: 2px solid #FFD700;
       font-size: 1rem;
       margin-bottom: 10px;
-      background-color: #FDF1c7;
+      background-color: #FDF1C7;
       color: #000;
+      animation: fadeIn 2.2s ease;
     }
+
     #previewBlock {
       margin-bottom: 12px;
       font-weight: bold;
       color: #FFD700;
+      animation: fadeIn 2.4s ease;
     }
+
     .social-buttons {
       display: flex;
       justify-content: space-between;
       gap: 6px;
       margin-top: 10px;
       flex-wrap: wrap;
+      animation: fadeIn 2.6s ease;
     }
+
     .mini-btn {
       flex: 1;
       display: flex;
@@ -107,10 +121,13 @@
     .mini-btn:hover {
       opacity: 0.9;
     }
+
     #generatedLinkBlock {
       margin-top: 10px;
       display: none;
+      animation: fadeIn 2.8s ease;
     }
+
     #generatedLink {
       width: 100%;
       padding: 9px;
@@ -119,31 +136,56 @@
       border: none;
     }
 
-    /* Diya GIF Styles */
+    /* Diya GIF Styles - Large */
     .diya-gif {
       position: fixed;
-      width: 90px; /* बड़ा किया गया */
+      width: 100px;
       height: auto;
       z-index: 1000;
       pointer-events: none;
+      animation: glow 2s ease-in-out infinite alternate;
     }
+
     .bottom-left {
       bottom: 10px;
       left: 10px;
     }
+
     .bottom-right {
       bottom: 10px;
       right: 10px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes glow {
+      from { opacity: 0.6; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.1); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>शुभ दीपावली</h1>
+    <h2>🎉 दीपावली की हार्दिक शुभकामनाएं 🎉</h2>
+
     <img id="selectedImage" src="https://github.com/saurani/Diwali-wishes-3/raw/main/Laxmimata.png" alt="लक्ष्मी माता" />
-    
-    <h2>दीवाली की हार्दिक शुभकामनाएं</h2>
-    
+
+    <h1>शुभ दीपावली</h1>
+
     <input type="text" id="senderName" placeholder="यहाँ अपना नाम लिखें" oninput="updatePreview()" />
     <div id="previewBlock"></div>
 
@@ -227,7 +269,7 @@
       const sender = params.get('sender');
       const img = params.get('img');
       if (sender && img) {
-        document.querySelector('h1').textContent = `🌟 शुभ दीपावली - ${decodeURIComponent(sender)} की ओर से`;
+        document.querySelector('h2').textContent = `🎉 दीपावली की शुभकामनाएं - ${decodeURIComponent(sender)} की ओर से 🎉`;
         document.getElementById('selectedImage').src = img;
       }
     }
